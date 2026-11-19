@@ -1,0 +1,3 @@
+import type {Review} from './types';
+export function summarize(reviews:Review[]){const total=reviews.length;const count=(s:string)=>reviews.filter(r=>r.sentiment===s).length;const avg=total?reviews.reduce((n,r)=>n+r.rating,0)/total:0;return{total,positive:count('positive'),negative:count('negative'),neutral:count('neutral'),mixed:count('mixed'),average:avg,satisfaction:total?Math.round((count('positive')+count('mixed')*.5)/total*100):0};}
+export function sentimentRows(reviews:Review[]){return ['positive','neutral','negative'].map(name=>({name:name[0].toUpperCase()+name.slice(1),value:reviews.filter(r=>r.sentiment===name).length}));}

@@ -1,0 +1,3 @@
+-- Demo seed is intentionally illustrative. Create an authenticated user and business first, then replace the UUID below.
+-- Example: insert into businesses(id,name,owner_id) values ('00000000-0000-0000-0000-000000000001','ReviewIQ Demo', auth.uid());
+-- Products and reviews should be inserted with the business_id created above.
